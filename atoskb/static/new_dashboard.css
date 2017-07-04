@@ -1,0 +1,93 @@
+.wrap{
+	width:100%;
+}
+body{
+ 	 padding-top: 69px !important
+}
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  color: #00466E;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+}
+
+.floatleft{
+	float:left;
+	width:20%;
+
+}
+
+.floatright{
+	float:right;
+	width:80%;
+}
+
+h3.knm_head {
+  color: #fff;
+  margin: 15px;
+  font-size: 19px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px #013E62;
+}
+.bootstrap-tags .tags-input {
+  height: 34px !important;
+  padding-left: 3px !important;
+}
+.bootstrap-tagsinput{
+	  width: 347px !important;
+  margin-left: -16px !important;
+}
+.form-control{
+	width: 347px !important;
+
+}
+
+header {
+  background: #0066a1;
+  height: 55px;
+  top: 0;
+  width: 100%;
+  z-index: 10000000;
+  position: fixed;
+  box-shadow: 0px 8px 19px 0px #7A7A7A;
+}
+
+@media (min-width: 768px){
+.sidebar {
+  position: fixed;
+  top: 58px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
+.item ul a {
+  border-bottom: none !important;
+  border-bottom: none !important;
+  color: #2E2E2E;
+  font-weight: 500;
+}
+
+.item a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #004770;
+  display: block;
+  padding: 10px 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.text_field1 #display_field{
+  width: 100%;
+  color: blue;
+}

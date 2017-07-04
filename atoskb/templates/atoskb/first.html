@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        Tag Demo
+    </title>
+    <!-- bootstrap tags -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+    <!--my dash board  -->
+    <!-- <link rel="stylesheet" href="/static/new_dashboard.css" type="text/css" /> -->
+    <!-- ckeditor -->
+    <script src="/static/ckeditor/ckeditor.js"></script>
+    <script src="/static/ckeditor/samples/js/sample.js"></script>
+    <link rel="stylesheet" href="/static/ckeditor/samples/css/samples.css">
+    <link rel="stylesheet" href="/static/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <h3 class="knm_head">Knowledge Management System</h3>
+            </div>
+            <!-- <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="">Home</a></li>
+            </ul> -->
+        </header>
+        <div class="wrap">
+            <div class="floatleft">
+                
+                <div class="col-sm-3 col-md-2 sidebar">
+                    {% for key,value in dic_filenames.items %}
+                    <div class="item">
+                        <a href="">{{ key }}</a> {% for vitems in value %}
+                        <div class="contents" id="{{vitems}}##{{key}}">
+                            <ul>
+                                <li><a href="">{{ vitems }}</a>
+                                </li>
+                            </ul>
+                            <br>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="floatright">
+
+                <h2 class="sub-header">Atos KB Editor</h2>
+                <!-- <h4>Add</h4> -->
+                <a href="/">Add Data</a>
+                <form class="form-horizontal" action='/post_list/'  method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <!-- hid -->
+                    <input type="hidden" class="form-control" name="h_id1" placeholder="" id="h_id1" value="">
+                    <!--  -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Topic</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="topic" placeholder="" id="topic1" />
+                        </div>
+                    </div>
+
+
+                    <div><input type="hidden" class="form-control" id="test_topic" name="test_topic" /></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Variations</label>
+                        <div class="col-sm-3">
+                            <div class="container" id="first">
+                                
+
+                                <input type="hidden"  data-role="tagsinput" id="var1" class="div-tag"   />
+                            </div>  
+                        </div>
+                    </div>
+                    <!--same variations  -->
+                    <div><input type="hidden" class="form-control" id="tvar" name="tvariations" /></div>
+                    <!-- check variations -->
+                    <input type="hidden" class="form-control" name="tvar_1" placeholder="" id="tvar_1">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Sub Topic</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="subtopic" placeholder="" id="sub_topic1">
+                        </div>
+                    </div>
+                    <!-- check sub topic -->
+                    <div><input type="hidden" class="form-control" name="sub_var_1" placeholder="" id="sub_var_1"></div>
+                    
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Variations</label>
+                        <div class="col-sm-3">
+                            <div class="container" id="second">
+                                
+                                <input type="hidden"  data-role="tagsinput" id="var2" class="div-tag"   />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- same variations -->
+                    <div><input type="hidden" id="svar" name="svariations" class="form-control"></div>
+                    <!-- check variations -->
+                    <div><input type="hidden" class="form-control" name="sub_var_2" placeholder="" id="sub_var_2"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Short Description</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="short" placeholder="" id="short">
+                        </div>
+                    </div>
+
+                    <!-- check short -->
+                    <div><input type="hidden" class="form-control" name="short_1" placeholder="" id="short_1"</div>
+
+
+
+                    <!--<div class="form-group">
+                        <label class="col-sm-2 control-label">Possible Questions</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="possiblequestion" placeholder="" id="possible">
+                        </div>
+                    </div>-->
+                    <!-- check possi -->
+                    <!--<div><input type="text" class="form-control" name="possi_1" placeholder="" id="possi_1"></div>-->
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Possible questions</label>
+                        <div class="col-sm-3">
+                            <div class="container" id="third">
+                                
+
+                                <input type="hidden"  data-role="tagsinput" id="var3" class="div-tag"   />
+                            </div>  
+                        </div>
+                    </div>
+                    <!--same variations  -->
+                    <div><input type="hidden" class="form-control" id="Pvar" name="possible" /></div>
+                    <!-- check variations -->
+                    <input type="hidden" class="form-control" name="possi_1" placeholder="" id="possi_1">
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Browse folder</label>
+                        <div class="col-sm-3" id="browser">
+                            <input type="file" name="datafile"  id="datafile" class="btn-default btn-file" multiple><br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-3">
+                            <div class="text_field1">
+                            </div>
+                            <!--<img id="img_11" src=""/>-->
+                            <!--<input type="text" id="text_field1" />-->
+                            <div><input type="hidden" class="form-control" name="h_id2" placeholder="" id="h_id2" /></div>
+                        </div>
+                    </div>
+
+
+                    
+                    
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-6">
+                            <textarea name="ckeditor" id="editor" class="ms_editor"></textarea>
+                        </div>
+                    </div>
+
+
+                    <!-- check ck -->
+                    <div><input type="hidden" class="form-control" name="ckeditor_1" placeholder="" id="ckeditor_1"></div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" id="submit-btn" class="btn btn-default" value="Submit">
+                        </div>
+                    </div>
+
+                    
+
+                    
+                    
+                </form>
+            </div>
+
+
+
+        <script>
+            $(function(){
+                $('.div-tag').tagsinput({
+
+                    allowDuplicates: false,
+                    confirmKeys: [13, 32, 44],
+                    itemValue: 'id',  
+                    itemText: 'label' 
+                });
+
+            });
+        
+        </script>
+
+        <script>
+            $('.floatright').keypress(function(e){
+                if ( e.which == 13 ) e.preventDefault();
+            });
+        </script>
+
+
+
+
+
+        <script>
+          $('.item ul').hide();
+
+          $('.item a').click(function(e){
+           e.preventDefault();
+           var $this = $(this).parent().find('ul');
+           //$(".item ul").not($this).hide();
+           $this.toggle();
+           });
+
+        </script> 
+
+
+        <script>
+            initSample('FDGDFGDFG');
+        </script>
+
+
+        <script type="text/javascript">
+            String.prototype.replaceAll = function (searchText, replacementText) {
+                        return this.split(searchText).join(replacementText);
+                        };
+            $('#submit-btn').hover(function(){
+                var spantexts1=[]
+                $('#first.container .bootstrap-tagsinput span').each(function(){ spantexts1.push($(this).text())});
+                // //console.log(spantexts);
+                var display1=spantexts1.join(',')
+                display1=display1.replaceAll(',,',',')
+                display1 = display1.substring(0, display1.length - 1);
+
+                var spantexts2=[]
+                $('#second.container .bootstrap-tagsinput span').each(function(){ spantexts2.push($(this).text())});
+                // //console.log(spantexts);
+                var display2=spantexts2.join(',')
+                display2=display2.replaceAll(',,',',')
+                display2 = display2.substring(0, display2.length - 1);                               
+
+
+                var spantexts3=[]
+                $('#third.container .bootstrap-tagsinput span').each(function(){ spantexts3.push($(this).text())});
+                // //console.log(spantexts);
+                var display3=spantexts3.join(',')
+                display3=display3.replaceAll(',,',',')
+                display3 = display3.substring(0, display3.length - 1);                               
+
+
+                $('#tvar').val(display1);
+                $('#svar').val(display2);
+                $('#Pvar').val(display3);
+
+            });
+        </script>
+
+
+
+        <script>
+            
+            $('.contents').click(function(e){
+                CKEDITOR.instances.editor.setData('');
+
+                var id = this.id ;
+                //console.log(id);
+                //console.log(id);
+                $.ajax({
+                    type:"POST",
+                    url:"/edit_post/",
+                    data:{
+                        'id':id,
+                    },
+                    success:function(data){
+                        console.log(data);
+                        String.prototype.replaceAll = function (searchText, replacementText) {
+                        return this.split(searchText).join(replacementText);
+                        };
+                        var image_name=data.latest.image;
+                        image_name=image_name.split('.')[0];
+                        //console.log(image_name);
+                        if ($(".text_field1 :input").val() != '') {
+                            $('.text_field1 :input').remove();
+                        }
+
+                        $('#h_id1').val(data.latest.t_id);
+
+                        $('#topic1').val(data.latest.Topic);
+                        $("#topic1").prop("readonly", true);
+                        $('#test_topic').val(data.latest.Topic);
+                        
+                        var tvariations1=data.latest.Tvariations.split(',');
+                                                
+                        $("#var1").val(tvariations1);
+
+                        $('#var1').tagsinput('removeAll');
+                        for (val in tvariations1){
+                            $('#var1').tagsinput('add', tvariations1[val]);
+                            }
+                        $("#tvar_1").val(data.latest.Tvariations);
+                        
+
+                        $('#sub_topic1').val(data.latest.Sub_Topic);
+                        $('#sub_var_1').val(data.latest.Sub_Topic);
+
+
+                        var svariations1=data.latest.Svariations.split(',');
+                        //var svariations1  = data.latest.Svariations.replace("[","").replace("]","").replaceAll("'",'').split(',');
+                        
+                        $("#var2").val(data.latest.Svariations);
+
+                        $('#var2').tagsinput('removeAll');
+                        for (val in svariations1){
+                            $('#var2').tagsinput('add', svariations1[val]);
+                            }
+                        
+                        $("#sub_var_2").val(data.latest.Svariations);
+
+
+
+                        $('#short').val(data.latest.Short_description);
+                        $('#short_1').val(data.latest.Short_description);
+
+
+
+
+
+                        var pvariations1=data.latest.possible_question.split(',');
+                                                
+                        $("#var3").val(pvariations1);
+
+                        $('#var3').tagsinput('removeAll');
+                        for (val in pvariations1){
+                            $('#var3').tagsinput('add', pvariations1[val]);
+                            }
+                        $("#possi_1").val(data.latest.possible_question);
+                        //$('#possible').val(data.latest.possible_question);
+                        //$('#possi_1').val(data.latest.possible_question);
+
+
+                        
+                        var total_images=data.latest.image;
+                        total_images=total_images.replace("['",'').replace("[u'",'').replaceAll("', '",',').replaceAll("', u'",',').replace("']",'').split(',');
+
+                        $('#h_id2').val(total_images);
+                        if (total_images != "[]"){
+                        //console.log(total_images)
+                            for (item in total_images){
+                                $('.text_field1').prepend($('<input>',{id:"display_field",value:total_images[item].replace(data.latest.Topic,'').replace(data.latest.Sub_Topic,'').replace()}));
+                            //$('#text_field1').prepend($('<span>',{class:"glyphicon glyphicon-search",aria-hidden:"true"}));
+                            //<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            }
+                        }
+
+
+                        CKEDITOR.instances['editor'].insertHtml(data.latest.ckeditor);
+                        
+                        $('#ckeditor_1').val(data.latest.ckeditor);
+                       
+                        
+                        
+
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $('#browser').click(function(e){
+                $('#img_11').hide();
+            });
+        </script>
+
+
+
+    </body>
+</html>
+
